@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: secrets-provider-aws
+  namespace: flux-system
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: secrets-store-csi-driver-provider-aws
+      version: "0.3.x"   # pin to a real tag, e.g. 0.3.9 — check releases page
+      sourceRef:
+        kind: HelmRepository
+        name: aws-secrets-manager
+        namespace: flux-system
+  targetNamespace: kube-system
+  install:
+    createNamespace: false
+  values:
+    secrets-store-csi-driver:
+      install: false   # since you already deploy the CSI driver separately

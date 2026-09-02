@@ -7,3 +7,4 @@ resources:
   - vpa
   - prometheus
   - secrets-store-csi-driver
+  - aws-secrets-manager
