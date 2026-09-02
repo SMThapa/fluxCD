@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/SMThapa/google-photo-clone.git
-    targetRevision: main
+    targetRevision: master
     path: k8s-main/overlay/prod
   destination:
     server: https://kubernetes.default.svc
