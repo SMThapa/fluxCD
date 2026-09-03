@@ -18,5 +18,11 @@ spec:
     createNamespace: false
   values:
     secrets-store-csi-driver:
-      install: false   # since you already deploy the CSI driver separately
+        install: true
+        syncSecret:
+          enabled: true
+        enableSecretRotation: true
+        tokenRequests:
+          - audience: sts.amazonaws.com
+          - audience: pods.eks.amazonaws.com
     podIdentityHttpTimeout: "30s"

@@ -5,6 +5,5 @@ resources:
   - metric-server
   - envoy-gateway
   - vpa
-  - prometheus
-  - secrets-store-csi-driver
+  - prometheus  
   - aws-secrets-manager
