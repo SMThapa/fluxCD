@@ -20,3 +20,6 @@ spec:
     syncSecret:
       enabled: true       # only if you need K8s Secret sync
     enableSecretRotation: true
+    tokenRequests:
+      - audience: sts.amazonaws.com
+      - audience: pods.eks.amazonaws.com
